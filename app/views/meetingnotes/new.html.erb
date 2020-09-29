@@ -1,0 +1,11 @@
+<h1>Add Meeting Notes here</h1>
+
+<%= form_with scope: :notes, url: meetingnotes_path, local: true do |f| %>
+    <p>
+        <%= f.label :notes %> <br>
+        <%= f.text_area :description %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

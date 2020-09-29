@@ -1,0 +1,18 @@
+<h1>Notes listed here</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Notes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @meetingnotes.each do |meetingnote| %>
+            <tr>
+                <td><%= meetingnote.description.capitalize() %> </td>
+                <td>Placeholder</td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
