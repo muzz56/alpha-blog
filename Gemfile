@@ -27,7 +27,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+<<<<<<< HEAD
   # Use sqlite3 as the database for Active Record
+=======
+>>>>>>> 53088837cd1d0f1411583da6e5dd17235af46494
   gem 'sqlite3', '~> 1.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

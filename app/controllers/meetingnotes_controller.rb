@@ -1,5 +1,5 @@
 class MeetingnotesController < ApplicationController
-    before_action: set_meetingnote, only: [:show, :edit, :update, :destroy]
+    before_action :set_meetingnote, only: [:show, :edit, :update, :destroy]
 
 
     def show
