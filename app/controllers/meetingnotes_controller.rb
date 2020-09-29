@@ -1,7 +1,8 @@
 class MeetingnotesController < ApplicationController
-    
+    before_action: set_meetingnote, only: [:show, :edit, :update, :destroy]
+
+
     def show
-        @meetingnote = Meetingnote.find(params[:id])
     end
 
     def index
@@ -13,7 +14,6 @@ class MeetingnotesController < ApplicationController
     end
 
     def edit
-        @meetingnote = Meetingnote.find(params[:id])
     end
 
 
@@ -28,13 +28,22 @@ class MeetingnotesController < ApplicationController
     end
 
     def update
-        @meetingnote = Meetingnote.find(params[:id])
         if @meetingnote.update(params.require(:meetingnote).permit(:description))
             flash[:notice] = "Notes were updated successfully."
             redirect_to @meetingnote
         else
             render 'edit'
         end             
+    end
+
+    def destroy
+        @meetingnote.destroy
+        redirect_to meetingnotes_path
+    end
+    
+    private
+    def set_meetingnote
+        @meetingnote = Meetingnote.find(params[:id])
     end
 
 

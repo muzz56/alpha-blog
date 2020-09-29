@@ -1,3 +1,7 @@
 <h2>Displaying Meeting Notes</h2>
 
 <p><strong>Notes: </strong><%= @meetingnote.description.capitalize() %> </p>
+
+<%= link_to 'Edit', edit_meetingnote_path(@meetingnote) %> |
+<%= link_to 'Delete', meetingnote_path(@meetingnote), method: :delete, data: {confirm: 'Are you sure'} %> | 
+<%= link_to 'Back', meetingnotes_path %>

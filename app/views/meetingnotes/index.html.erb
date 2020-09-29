@@ -4,15 +4,20 @@
     <thead>
         <tr>
             <th>Notes</th>
-            <th>Actions</th>
+            <th colspan='3'>Actions</th>
         </tr>
     </thead>
     <tbody>
         <% @meetingnotes.each do |meetingnote| %>
             <tr>
                 <td><%= meetingnote.description.capitalize() %> </td>
-                <td>Placeholder</td>
+                <td><%= link_to 'Show', meetingnote_path(meetingnote) %></td>
+                <td><%= link_to 'Edit', edit_meetingnote_path(meetingnote) %></td>
+                <td><%= link_to 'Delete', meetingnote_path(meetingnote), method: :delete, data: {confirm: 'Are you sure'} %></td>
             </tr>
         <% end %>
     </tbody>
 </table>
+<p>
+    <%= link_to 'Add Meeting Notes', new_meetingnote_path %>
+</p>    
